@@ -8,6 +8,7 @@ function compute() {
     let flag = 1;
     if( principal == 0 || isNaN(principal) || principal<0){
         alert("Please enter a positive number");
+        document.getElementById("principal").focus();
         flag = 0;
     }
     if (flag){
@@ -17,10 +18,10 @@ function compute() {
         var interest = principal * years * rate /100;
         p = document.getElementById("result");
         p.innerHTML=`
-                    If you deposit ${principal},
-                    at an interest rate of ${rate}%.
-                    You will receive an amount of ${interest},
-                    in the year ${year}
+                    If you deposit <span class="resultNum">${principal}</span>,<br/>
+                    at an interest rate of <span class="resultNum">${rate}%</span>.<br/>
+                    You will receive an amount of <span class="resultNum">${interest}</span>,<br/>
+                    in the year <span class="resultNum">${year}</span>
                     `
     }
 
