@@ -5,7 +5,9 @@ function updateRate() {
 
 function compute() {
     var principal = document.getElementById("principal").value;
-    if(!principal || isNaN(principal)){alert("Please enter a positive number");}
+    if( principal == 0 || isNaN(principal || principal<0))
+        alert("Please enter a positive number");
+        
     var rate = document.getElementById("rate").value;
     var years = document.getElementById("years").value;
     var year = new Date().getFullYear()+parseInt(years);
